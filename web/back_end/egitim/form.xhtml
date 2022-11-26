@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <link rel="stylesheet" href="../../ekdosya/resources/css/bootstrap.css"></link>
+    <link rel="stylesheet" href="../../ekdosya/resources/js/bootstrap.js"></link>
+
+    <h:form id="egitim-form" styleClass="table table-striped table-bordered dt-responsive nowrap" rendered="#{sessionScope.valid_user.admin}" class="text-center">
+        <h:messages styleClass="alert alert-danger alert" />
+        <div class = "form-group">
+
+            <div class="col-lg-12 mx-auto mt-2 " >
+                <h3 class="text-info">Eğitim İşlem Formu</h3>
+            </div>
+
+            <h:inputHidden value="#{egitimController.egitim.egitim_id}"/>
+
+            <br/>
+            <h:inputText styleClass="form-control" value = "#{egitimController.egitim.egitim_adi}" a:placeholder="Eğitim Adı" validator="#{egitimvalidator.validateAd}"/>
+            <br/>
+
+            <h:inputText styleClass="form-control" value = "#{egitimController.egitim.egitim_icerik}" a:placeholder="Eğitim İçeriği" validator="#{egitimvalidator.validateİcerik}"/>
+            <br/>
+
+            <label for="selectEgitmen" style="font-size: 18px;">Sorumlu Öğretmen </label>
+            <h:selectOneMenu styleClass="custom-select" id="selectEgitmen" value="#{egitimController.egitim.egitmen}" converter="egitmenConverter" >
+                <f:selectItems value="#{egitimController.egitmenController.full_list}" var="egitmen" itemValue="#{egitmen}" itemLabel="#{egitmen.egitmen_ad} #{egitmen.egitmen_soyad}"/>
+            </h:selectOneMenu>
+            <br/><br/>
+
+
+            <h:inputText styleClass="form-control" a:placeholder="Ücret" value = "#{egitimController.egitim.egitim_ucret}" validator="#{egitimvalidator.validateUcret}"/>
+
+
+            <label for="dosya">Dosya</label>
+            <h:selectOneMenu  styleClass="custom-select" id="dosya" value="#{egitimController.egitim.document}" converter="dosyaConverter" >
+                <f:selectItems value="#{egitimController.documentController.fullList}" var="document" itemValue="#{document}" itemLabel="#{document.fileName}"/>
+            </h:selectOneMenu>                            
+        </div>    
+
+        <div class = "form-group" rendered="#{sessionScope.valid_user.admin}">
+            <br/>
+            <h:commandButton rendered="#{egitimController.egitim.egitim_id == 0}" styleClass="btn btn-success" style="margin-left: 5px;" value="Ekle" action="#{egitimController.create()}">                       
+                <f:ajax execute="egitim-form" render="egitim-form egitim-table"/>
+            </h:commandButton>  
+            <h:commandButton rendered="#{egitimController.egitim.egitim_id != 0}" styleClass="btn btn-info" style="margin-left: 5px;" onclick="return confirm('Emin misiniz?')" value="Güncelle" action="#{egitimController.update()}">                       
+                <f:ajax execute="egitim-form" render="egitim-form egitim-table"/>
+            </h:commandButton>    
+            <h:commandButton rendered="#{egitimController.egitim.egitim_id != 0}" styleClass="btn btn-warning" style="margin-left: 5px;" value="Formu Temizle" action="#{egitimController.clearForm()}">
+                <f:ajax execute="@this" render="egitim-form egitim-table"/>
+            </h:commandButton>
+            <h:commandButton  rendered="#{egitimController.egitim.egitim_id != 0}" styleClass="btn  btn-danger" style="margin-left: 5px;" onclick="return confirm('Kaydı Silmek İstediğinizden Emin Misiniz?')" value="Sil" action="#{egitimController.delete()}">
+                <f:ajax render="egitim-form egitim-form egitim-table" execute="@this" />
+            </h:commandButton>
+        </div>
+
+    </h:form>    
+
+
+</ui:composition>

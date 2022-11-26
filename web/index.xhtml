@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Fitness Salonu</title>
+        <link rel="stylesheet" href="ekdosya/resources/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="ekdosya/resources/js/bootstrap.js"></link>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="ekdosya/assets/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="ekdosya/assets/css/font-awesome.min.css"></link>
+        <link rel="stylesheet" href="ekdosya/assets/css/themify-icons.css"></link>
+        <link rel="stylesheet" href="ekdosya/assets/css/metisMenu.css"></link>
+        <link rel="stylesheet" href="ekdosya/assets/css/owl.carousel.min.css"></link>
+        <link rel="stylesheet" href="ekdosya/assets/css/slicknav.min.css"></link>
+        <link rel="stylesheet" href="ekdosya/assets/css/typography.css"></link>
+        <link rel="stylesheet" href="ekdosya/assets/css/default-css.css"></link>
+        <link rel="stylesheet" href="ekdosya/assets/css/styles.css"></link>
+        <link rel="stylesheet" href="ekdosya/assets/css/responsive.css"></link> 
+        <script src="ekdosya/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+        <link href="ekdosya/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link> 
+        <link href="ekdosya/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"></link> 
+        <link href="ekdosya/lib/animate/animate.min.css" rel="stylesheet"></link> 
+        <link href="ekdosya/lib/ionicons/css/ionicons.min.css" rel="stylesheet"></link> 
+        <link href="ekdosya/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"></link> 
+        <link href="ekdosya/lib/magnific-popup/magnific-popup.css" rel="stylesheet"></link> 
+        <link href="ekdosya/lib/ionicons/css/ionicons.min.css" rel="stylesheet"></link> 
+        <link href="ekdosya/css/style.css" rel="stylesheet"></link> 
+    </h:head>
+    <body id="body">
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h:form>
+                            <h:messages styleClass="alert alert-danger alert" />
+                            <div id="logo" class="pull-left" style="margin-top: 20px; margin-right: 10px;">
+                                <h1><a href="#body" class="scrollto">FitnessXP</a></h1>
+                            </div>
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <div class="collapse navbar-collapse" id="navbarNav">
+
+                                    <div class="col-md-4">
+                                        <p>Kullanıcı Email <h:inputText styleClass="form-control" value="#{loginController.uye.uye_mail}"/> </p> 
+                                    </div>
+
+                                    <div class="col-md-4">                                    
+                                        <p>Şifre <h:inputSecret styleClass="form-control"  value="#{loginController.uye.sifre}"/></p>
+                                    </div>
+
+
+                                    <div class="col-md-2 text-center">
+                                        <h:commandButton  styleClass="btn btn-primary" action="#{loginController.login()}" value="Giriş"/>
+                                    </div>
+                                    <div class="col-md-2 text-center">
+                                        <h:commandButton  styleClass="btn btn-dark" action="front_end/kayitol.xhtml" value="Kayıt Ol"/>
+                                    </div>
+                                    <div class="col-md-2 text-center">
+                                        <h:commandButton  styleClass="btn-xs btn-danger" action="front_end/sifremiunuttum.xhtml" value="Şifremi Unuttum"/>
+                                    </div>
+                                </div>
+                            </nav>
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="intro">
+
+            <div class="intro-content">
+                <h3>"Ben Sporcunun Zeki, Çevik ve Ahlaklısını Severim"</h3>
+                <h2>Mustafa Kemal Atatürk</h2>
+            </div>
+
+            <div id="intro-carousel" class="owl-carousel">
+                <div class="item" style="background-image:url('ekdosya/resources/file/index1.jpg');"></div>
+                <div class="item" style="background-image:url('ekdosya/resources/file/index2.jpg');"></div>
+            </div>
+
+            <footer id="footer">
+                <div class="container">
+                    <div class="copyright">
+                        2020 &copy; Copyright <strong>Fitness</strong>
+                    </div>
+                </div>
+            </footer>
+
+        </section>
+    </body>
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <script src="ekdosya/assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="ekdosya/assets/js/popper.min.js"></script>
+    <script src="ekdosya/assets/js/bootstrap.min.js"></script>
+    <script src="ekdosya/assets/js/owl.carousel.min.js"></script>
+    <script src="ekdosya/assets/js/metisMenu.min.js"></script>
+    <script src="ekdosya/assets/js/jquery.slimscroll.min.js"></script>
+    <script src="ekdosya/assets/js/jquery.slicknav.min.js"></script>  
+    <script src="ekdosya/assets/js/plugins.js"></script>
+    <script src="ekdosya/assets/js/scripts.js"></script>
+    <script src="ekdosya/lib/jquery/jquery.min.js"></script>
+    <script src="ekdosya/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="ekdosya/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="ekdosya/lib/easing/easing.min.js"></script>
+    <script src="ekdosya/lib/superfish/hoverIntent.js"></script>
+    <script src="ekdosya/lib/superfish/superfish.min.js"></script>
+    <script src="ekdosya/lib/wow/wow.min.js"></script>
+    <script src="ekdosya/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="ekdosya/lib/magnific-popup/magnific-popup.min.js"></script>
+    <script src="ekdosya/lib/sticky/sticky.js"></script>
+    <script src="ekdosya/js/main.js"></script>
+</html>
+

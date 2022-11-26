@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <link rel="stylesheet" href="../../ekdosya/resources/css/bootstrap.css"></link>
+    <link rel="stylesheet" href="../../ekdosya/resources/js/bootstrap.js"></link>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <h:form>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <h:commandButton styleClass="btn btn-info" rendered="#{sessionScope.valid_user.admin}" action="#{navigationBean.page('uye')}" value="Üyeler"/>
+                    </li>
+                    <li class="nav-item active"  style="margin-left:10px;">
+                        <h:commandButton styleClass="btn btn-info" action="#{navigationBean.page('egitim')}" value="Eğitimler"/>
+                    </li>
+                    <li class="nav-item active"  style="margin-left:10px;">
+                        <h:commandButton styleClass="btn btn-info" action="#{navigationBean.page('egitmen')}" value="Eğitmenler"/>
+                    </li> 
+                    <li class="nav-item active"  style="margin-left:10px;">
+                        <h:commandButton styleClass="btn btn-info" action="#{navigationBean.page('program')}" value="Program Listesi"/>
+                    </li>
+                    <li class="nav-item active"  style="margin-left:10px;">
+                        <h:commandButton  styleClass="btn btn-info" action="#{navigationBean.page('diyet')}" value="Diyet Listesi"/>
+                    </li>
+                    <li class="nav-item active"  style="margin-left:10px;">
+                        <h:commandButton rendered="#{sessionScope.valid_user.admin}" styleClass="btn btn-info" action="#{navigationBean.page('bilgi')}" value="Bilgi İşlem"/>
+                    </li>   
+                    <li class="nav-item active"  style="margin-left:10px;">
+                        <h:commandButton styleClass="btn btn-info" action="#{navigationBean.page('olcum')}" value="Vücut Kitle İndex Hesapla"/>
+                    </li>   
+                    <li class="nav-item active"  style="margin-left:10px;">
+                        <h:commandButton  rendered="#{sessionScope.valid_user.admin}" styleClass="btn btn-info" action="#{navigationBean.page('document')}" value="Dosya"/>
+                    </li>
+                    <li class="nav-item active" style="margin-left: 10px;">
+                        <h:commandLink  styleClass="btn btn-group btn-outline-danger" action="/front_end/logout?faces-redirect=true" value="Çıkış"/>
+                    </li>
+
+
+                </ul>
+            </h:form>       
+        </div>
+    </nav>
+
+</ui:composition>
